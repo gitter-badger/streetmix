@@ -1,17 +1,43 @@
-[![Build Status](https://travis-ci.org/codeforamerica/streetmix.svg?branch=master)](https://travis-ci.org/codeforamerica/streetmix)
-[![Dependency Status](https://david-dm.org/codeforamerica/streetmix.svg)](https://david-dm.org/codeforamerica/streetmix)
-[![Code Climate](https://codeclimate.com/github/codeforamerica/streetmix.png)](https://codeclimate.com/github/codeforamerica/streetmix)
+<p align="center">
+  <a href="http://streetmix.net/">
+    <img alt="Streetmix" src="https://streetmix.github.io/assets/logos/streetmix-logo.svg" width="450">
+  </a>
+</p>
 
-Streetmix
-=========
+<p align="center">
+  <b>Design, remix, and share your neighborhood street.</b>
+  <br>Make change in your community at <a href="http://streetmix.net/">streetmix.net</a>.
+</p>
 
-Streetmix is a browser-based interactive tool that lets you design, remix, and share your neighborhood street.  Add trees or bike paths, widen sidewalks or traffic lanes, and learn how your decisions can impact your community.
+<p align="center">
+  :couple: :palm_tree: :oncoming_automobile: :oncoming_bus: :palm_tree: :dancer:
+</p>
 
-Streetmix is currently live at http://streetmix.net/
+<p align="center">
+  <b>Have questions? Looking for support or advice?</b>
+  <br><a href="http://forums.streetmix.net/">Check out our forums</a> or <a href="https://streetmix-slack.herokuapp.com/">join our Slack chat!</a>
+</p>
 
-![screenshot](doc/images/screenshot-beta.jpg)
+<p align="center">
+  Learn more about the team and project collaborators at <a href="https://opencollective.com/streetmix">Open Collective</a>.
+  <br>We welcome contributions! Please see our <a href="https://github.com/codeforamerica/streetmix/blob/master/CONTRIBUTING.md">contributor guidelines</a>.
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/codeforamerica/streetmix"><img alt="Build Status" src="https://img.shields.io/travis/codeforamerica/streetmix/master.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/codeforamerica/streetmix"><img alt="Dependency Status" src="https://img.shields.io/david/codeforamerica/streetmix.svg?style=flat-square"></a>
+  <a href="https://codeclimate.com/github/codeforamerica/streetmix"><img alt="Code Climate" src="https://img.shields.io/codeclimate/github/codeforamerica/streetmix.svg?style=flat-square"></a>
+</p>
+
+<hr>
+
+<p align="center">
+  <img src="https://github.com/codeforamerica/streetmix/raw/master/doc/images/screenshot-beta.jpg" alt="screenshot">
+</p>
 
 ## About
+
+[![Join the chat at https://gitter.im/streetmix2/Lobby](https://badges.gitter.im/streetmix2/Lobby.svg)](https://gitter.im/streetmix2/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 #### What are street sections?
 
@@ -36,169 +62,19 @@ Streetmix can be used as a tool to promote and engage citizens around streetscap
 
 #### How did this project start?
 
-Streetmix was started as a [Code for America][cfa] hackathon project in January 2013, inspired by community meetings like the one described above, and a similar CfA project in 2012 called [Blockee](http://blockee.org/).
+Streetmix started as a [Code for America][cfa] hackathon project in January 2013, inspired by community meetings like the one described above.
 
+[cfa]: https://codeforamerica.org/
 
-## Development Setup
+## Sponsors
 
-### First-time setup
-
-#### On Mac OS X 10
-
-These installation instructions assume that you have already installed the [Homebrew](http://brew.sh/) package manager.
-
-1) Download and install [Node.js](http://nodejs.org/).
-
-    brew install nodejs
-
-2) Download, install and start [MongoDB](http://www.mongodb.org/).
-
-    brew install mongodb
-
-3) Download and install [Coreutils](http://www.gnu.org/software/coreutils/).
-
-    brew install coreutils
-
-4) Clone this remote repository to a folder on your computer.
-
-    git clone https://github.com/codeforamerica/streetmix.git
-
-5) Install project dependencies.
-
-    cd streetmix
-    npm install
-
-
-#### On Windows
-
-Streetmix was not developed on a Windows platform, and testing is limited. We've been able to successfully stand up a local installation on 64-bit Windows 7-based Dell laptops for an event without Internet access. These instructions below will assume that the user has basic familiarity with Git, GitHub, and the Windows Terminal command line interface, and has administrative permissions to install software on the machine.
-
-##### Installing core dependencies
-
-You may skip each of these steps if a fairly recent stable version is already present on the system.
-
-* Install [Git](http://git-scm.com/download/win).
-* Install [node.js](http://nodejs.org/). The site should detect your system and provide you with the correct installer, but you may specify the package at http://nodejs.org/download/ (e.g. Windows 64-bit installer).
-* Install [MongoDB](http://www.mongodb.org/downloads). Select the appropriate Windows installer package from their downloads page.
-* Install [a modern browser](http://browsehappy.com/). Streetmix has been tested in Chrome (preferred), Firefox, Safari, and Internet Explorer 11. (Previous versions of Internet Explorer will not work.)
-
-##### Installing Streetmix
-
-1) In the command line terminal, clone a copy of the Streetmix repository to your local machine:
-
-    git clone https://github.com/codeforamerica/streetmix.git
-
-You may additionally specify the name of the directory to install to, if you wish.
-
-2) Go into the project’s root directory and install all Node libraries.
-
-    cd streetmix
-    npm install
-
-3) Set up the MongoDB environment. [Follow the instructions under “Set up the MongoDB environment” from the MongoDB website.](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/#run-mongodb)
-
-#### On all systems
-
-1) Setup environment variables. You can either set these in your `.bash_profile` (or equivalent, on Mac OSX or *nix-based systems) or place them in a file named `.env` in the project root directory (great for development environments or Windows environments).
-
-| Variable name                   | Description                                                                            | Required?            |
-| ------------------------------- | -------------------------------------------------------------------------------------- | -------------------- |
-| `SENDGRID_USERNAME`             | Your SendGrid username                                                                 | Yes                  |
-| `SENDGRID_PASSWORD`             | Your SendGrid password                                                                 | Yes                  |
-| `TWITTER_OAUTH_CONSUMER_KEY`    | Development Twitter OAuth consumer key, obtained from @streetmix Twitter account    | Yes                  |
-| `TWITTER_OAUTH_CONSUMER_SECRET` | Development Twitter OAuth consumer secret, obtained from @streetmix Twitter account | Yes                  |
-| `EMAIL_FEEDBACK_RECIPIENT`      | Your e-mail address                                                                    | No                   |
-| `NO_INTERNET_MODE`              | Boolean. Set to `true` to run a local "demo" without external Internet access          | No                   |
-
-A sample `.env` file will look like this:
-
-```
-SENDGRID_USERNAME=username@domain.com
-SENDGRID_PASSWORD=p@$$w0rD
-TWITTER_OAUTH_CONSUMER_KEY=twitteroauthconsumerkey
-TWITTER_OAUTH_CONSUMER_SECRET=twitteroauthsecrettoken
-EMAIL_FEEDBACK_RECIPIENT=test@domain.com
-NO_INTERNET_MODE=true
-```
-
-*Note:* If `NO_INTERNET_MODE` is true, you do not need the Sendgrid or Twitter authentication keys, as those will be disabled due to lack of Internet.
-
-
-### HOWTO: Start the application
-
-1) Start MongoDB.
-
-    mongod
-
-2) Start the web server.
-
-    cd streetmix
-    npm start
-
-3) Load the application in your web browser.
-
-    open http://127.0.0.1:8000
-
-
-### HOWTO: Run browser integration tests
-
-1) Install test dependencies (only required once)
-
-    grunt test:local:setup
-
-2) Run browser tests locally
-
-    grunt test:local
-
-
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-### Submitting an Issue
-We use the [GitHub issue tracker][issues] to track bugs and features. Before
-submitting a bug report or feature request, check to make sure it hasn't
-already been submitted. You can indicate support for an existing issue by
-voting it up. When submitting a bug report, please include  any details that may
-be necessary to reproduce thebug, including your node version, npm version, and
-operating system.
-
-### Submitting a Pull Request
-1. Fork the project.
-2. Create a topic branch.
-3. Implement your feature or bug fix.
-4. Commit and push your changes.
-5. Submit a pull request.
-
-[issues]: https://github.com/codeforamerica/streetmix/issues
-
-
-## Credits
-
-The team is comprised of 2013 Code for America fellows.
-
-* [Ans Bradford][ans], media production
-* [Ezra Spier][ahhrrr], cat herder, proto-urbanist
-* [Katie Lewis][katie], illustrator
-* [Lou Huang][louh], project lead, research, outreach, transit fan
-* [Marc Hébert][marccfa], UX researcher, design anthropologist
-* [Marcin Wichary][mwichary], UX, FE, PM, sharrow whisperer
-* [Shaunak Kashyap][ycombinator], rear end engineering
-
-[cfa]: http://codeforamerica.org/
-[ahhrrr]: https://github.com/ahhrrr
-[louh]: https://github.com/louh
-[mwichary]: https://github.com/mwichary
-[ans]: https://github.com/anselmbradford
-[katie]: https://github.com/katielewis
-[ycombinator]: https://github.com/ycombinator
-[marccfa]: https://github.com/MarcCfA
-
-You can contact the team at streetmix@codeforamerica.org.
-
-Also, this project was made possible by the support of Code for America staff and other 2013 fellows, as well as our network of urbanists, design and planning professionals, and testers, who have provided us countless amounts of time and feedback towards this development.
+<p align="center">
+  <a href="https://opencollective.com/streetmix"><img src="https://opencollective.com/streetmix/sponsors.svg" alt="Become a sponsor"></a>
+</p>
 
 
 ### Copyright
-Copyright (c) 2013 Code for America. See [LICENSE][] for details.
+
+Copyright (c) 2013-2016 Code for America and contributors. See [LICENSE][] for details.
 
 [license]: https://github.com/codeforamerica/streetmix/blob/master/LICENSE.md
